@@ -1,0 +1,89 @@
+/* CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Global Variables */
+:root {
+  --color-primary: #0ea5e9; /* sky-500 */
+  --color-primary-hover: #38bdf8; /* sky-400 */
+  --color-dark: #172554; /* blue-950 */
+  --color-slate-600: #475569;
+  --color-slate-900: #0f172a;
+}
+
+/* Utilities */
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.bg-white { background-color: white; }
+.bg-slate-50 { background-color: #f8fafc; }
+.pt-24 { padding-top: 6rem; }
+.pb-24 { padding-bottom: 6rem; }
+.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+
+.text-center { text-align: center; }
+
+/* Sections & Containers */
+.section-py {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.section-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

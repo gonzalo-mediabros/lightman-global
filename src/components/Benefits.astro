@@ -1,0 +1,71 @@
+---
+import "../styles/components/Benefits.css";
+
+const benefits = [
+  {
+    title: "Eficiencia Operativa",
+    desc: "Optimizamos rutas y tiempos de entrega mediante tecnología avanzada.",
+  },
+  {
+    title: "Seguridad Garantizada",
+    desc: "Protocolos estrictos de manejo y seguros de carga internacionales.",
+  },
+  {
+    title: "Atención 24/7",
+    desc: "Soporte personalizado y seguimiento en tiempo real de sus envíos.",
+  },
+  {
+    title: "Costos Competitivos",
+    desc: "Acuerdos estratégicos con carriers que se traducen en mejores tarifas.",
+  },
+];
+---
+
+<section class="benefits">
+  <div class="benefits-container">
+    <div class="benefits-image-wrapper">
+      <div class="benefits-blob"></div>
+      <img
+        src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=600&h=500"
+        alt="Logistic terminal with containers"
+        class="benefits-img"
+      />
+      <div class="benefits-stat-card">
+        <p class="stat-number">99%</p>
+        <p class="stat-desc">Entregas a tiempo el último año</p>
+      </div>
+    </div>
+
+    <div class="benefits-content">
+      <h2>¿Por qué elegir GlobalFreight?</h2>
+      <p class="lead">
+        Somos más que un transportista; somos su socio estratégico en el
+        crecimiento internacional. Nuestra experiencia nos permite sortear los
+        desafíos más complejos.
+      </p>
+
+      <div class="benefits-list">
+        {
+          benefits.map((benefit) => (
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <div class="benefit-text">
+                <h4>{benefit.title}</h4>
+                <p>{benefit.desc}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

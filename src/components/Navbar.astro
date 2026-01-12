@@ -1,0 +1,129 @@
+---
+import "../styles/components/Navbar.css";
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = "home" } = Astro.props;
+---
+
+<nav class={`navbar ${currentPath !== "home" ? "not-home" : ""}`} id="navbar">
+  <div class="navbar-container">
+    <a href={import.meta.env.BASE_URL} class="logo-link">
+      <div class="logo-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+      </div>
+      <span class="logo-text">
+        GlobalFreight <span>Logistics</span>
+      </span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="desktop-menu">
+      <a
+        href={import.meta.env.BASE_URL}
+        class={`nav-link ${currentPath === "home" ? "active" : ""}`}>Inicio</a
+      >
+      <a
+        href={`${import.meta.env.BASE_URL}transporte/`}
+        class={`nav-link ${currentPath === "transporte" ? "active" : ""}`}
+        >Transporte</a
+      >
+      <a
+        href={`${import.meta.env.BASE_URL}comercializadora/`}
+        class={`nav-link ${currentPath === "comercializadora" ? "active" : ""}`}
+        >Comercializadora</a
+      >
+      <a
+        href={`${import.meta.env.BASE_URL}aduana/`}
+        class={`nav-link ${currentPath === "aduana" ? "active" : ""}`}>Aduana</a
+      >
+      <a href="#contact" class="btn-quote" id="desktop-quote-btn">Cotizar</a>
+    </div>
+
+    <!-- Mobile toggle -->
+    <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+      <svg
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        id="toggle-icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href={import.meta.env.BASE_URL} class="mobile-nav-link">Inicio</a>
+    <a href={`${import.meta.env.BASE_URL}transporte/`} class="mobile-nav-link"
+      >Transporte</a
+    >
+    <a
+      href={`${import.meta.env.BASE_URL}comercializadora/`}
+      class="mobile-nav-link">Comercializadora</a
+    >
+    <a href={`${import.meta.env.BASE_URL}aduana/`} class="mobile-nav-link"
+      >Aduana</a
+    >
+    <a href="#contact" class="mobile-btn-quote" id="mobile-quote-btn"
+      >Solicitar Cotización</a
+    >
+  </div>
+</nav>
+
+<script>
+  const navbar = document.getElementById("navbar");
+  const mobileToggle = document.getElementById("mobile-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const toggleIcon = document.getElementById("toggle-icon");
+
+  if (navbar && mobileToggle && mobileMenu && toggleIcon) {
+    // Scroll handling
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // Mobile menu handling
+    let isMenuOpen = false;
+
+    mobileToggle.addEventListener("click", () => {
+      isMenuOpen = !isMenuOpen;
+      if (isMenuOpen) {
+        mobileMenu.classList.add("open");
+        toggleIcon.innerHTML =
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+      } else {
+        mobileMenu.classList.remove("open");
+        toggleIcon.innerHTML =
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+      }
+    });
+
+    // Close mobile menu on click
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        isMenuOpen = false;
+        mobileMenu.classList.remove("open");
+      });
+    });
+  }
+</script>

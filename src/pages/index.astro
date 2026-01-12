@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import Benefits from "../components/Benefits.astro";
+import Coverage from "../components/Coverage.astro";
+import Testimonials from "../components/Testimonials.astro";
+import ContactForm from "../components/ContactForm.astro";
+import "../styles/pages/home.css";
+---
+
+<Layout
+  title="GlobalFreight Logistics | Liderazgo en Logística Internacional"
+  currentPath="home"
+>
+  <Hero />
+
+  <div class="home-intro">
+    <div class="section-container">
+      <div class="home-intro-text">
+        <h2>Nuestros Pilares Estratégicos</h2>
+        <p>
+          Dominamos la cadena de suministro global a través de tres líneas de
+          negocio integradas que garantizan el éxito de su operación.
+        </p>
+      </div>
+      <Services />
+    </div>
+  </div>
+
+  <Benefits />
+  <Coverage />
+  <Testimonials />
+
+  <div id="cta-section" class="cta-section">
+    <div class="section-container">
+      <h2>¿Listo para optimizar su cadena de suministro?</h2>
+      <p>
+        Nuestro equipo de expertos está listo para diseñar la solución logística
+        perfecta para su negocio.
+      </p>
+      <a href="#contact" class="btn-cta"> Obtener Cotización Gratis </a>
+    </div>
+  </div>
+
+  <ContactForm />
+</Layout>

@@ -1,0 +1,133 @@
+.coverage {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: #0f172a; /* slate-900 */
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.coverage-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+}
+
+.coverage-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.coverage-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.coverage-header {
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.coverage-header h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .coverage-header h2 {
+        font-size: 3rem;
+    }
+}
+
+.coverage-header h2 span {
+    color: #38bdf8;
+}
+
+.coverage-header p {
+    color: #dbeafe;
+    opacity: 0.7;
+    font-size: 1.125rem;
+    line-height: 1.625;
+}
+
+.coverage-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .coverage-stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.coverage-stat p:first-child {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #38bdf8;
+    margin-bottom: 0.5rem;
+}
+
+.coverage-stat p:last-child {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+}
+
+.coverage-regions {
+    margin-top: 4rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+.regions-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .regions-list {
+        flex-direction: row;
+    }
+}
+
+.region-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.region-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #0ea5e9;
+    border-radius: 9999px;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+}
+
+.region-name {
+    font-size: 1.25rem;
+    font-weight: 500;
+}

@@ -1,0 +1,172 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import "../styles/shared-pages.css";
+---
+
+<Layout
+  title="Almacén y Depósito Fiscal | GlobalFreight Logistics"
+  currentPath="almacenadora"
+>
+  <div class="pt-24 bg-white">
+    <header class="section-py" style="border-bottom: 1px solid #f1f5f9;">
+      <div
+        class="section-container"
+        style="display: flex; gap: 2rem; align-items: center; flex-direction: column;"
+      >
+        <div class="header-icon-box">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            ><path
+              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+            ></path></svg
+          >
+        </div>
+        <div style="text-align: center;">
+          <span class="page-subtitle text-sky-500">División Especializada</span>
+          <h1
+            class="page-title text-blue-950"
+            style="margin-top: 0.5rem; margin-bottom: 0;"
+          >
+            Almacenadora <span class="text-slate-3000" style="color: #94a3b8;"
+              >Genca</span
+            >
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <section class="section-py section-container">
+      <div style="max-width: 64rem; margin: 0 auto;">
+        <div
+          class="highlight-block bg-slate-900 text-white"
+          style="margin-top: 0; margin-bottom: 4rem;"
+        >
+          <div class="highlight-grid" style="grid-template-columns: 1fr;">
+            <div>
+              <h2
+                class="text-white"
+                style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem;"
+              >
+                Infraestructura Segura para el Comercio Global
+              </h2>
+              <p
+                class="text-slate-300"
+                style="font-size: 1.125rem; margin-bottom: 2rem;"
+              >
+                Operamos bajo la razón social <strong>Almacenadora Genca</strong
+                > para ofrecer servicios de almacenaje neutrales. Entendemos el mercado:
+                por eso, otros agentes de carga y competidores confían sus clientes
+                a nuestras instalaciones con la garantía total de no competencia.
+              </p>
+
+              <div
+                class="grid-2-cols"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;"
+              >
+                <div style="display: flex; gap: 1rem;">
+                  <div class="step-circle">01</div>
+                  <div>
+                    <h4 style="font-weight: 700; margin-bottom: 0.5rem;">
+                      Depósito Fiscal
+                    </h4>
+                    <p style="color: #94a3b8; font-size: 0.875rem;">
+                      Difiere el pago de impuestos mientras su mercancía
+                      permanece bajo nuestro resguardo legal.
+                    </p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                  <div class="step-circle">02</div>
+                  <div>
+                    <h4 style="font-weight: 700; margin-bottom: 0.5rem;">
+                      Almacén General
+                    </h4>
+                    <p style="color: #94a3b8; font-size: 0.875rem;">
+                      Control de inventarios de última generación con acceso a
+                      reportes en tiempo real.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card-simple">
+            <h4>Etiquetado & Pick/Pack</h4>
+            <p>
+              Acondicionamos su mercancía según las normas oficiales mexicanas
+              para su distribución inmediata.
+            </p>
+          </div>
+          <div class="feature-card-simple">
+            <h4>Cross-Docking</h4>
+            <p>
+              Agilidad total: descarga, clasificación y carga inmediata para
+              reducir tiempos de estancia.
+            </p>
+          </div>
+          <div class="feature-card-simple">
+            <h4>Seguridad 24/7</h4>
+            <p>
+              Circuito cerrado, control de accesos biométrico y guardias
+              presenciales de forma permanente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <ContactForm />
+  </div>
+</Layout>
+
+<style>
+  .header-icon-box {
+    width: 5rem;
+    height: 5rem;
+    background-color: #f1f5f9;
+    color: #94a3b8;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-icon-box svg {
+    width: 3rem;
+    height: 3rem;
+  }
+  .step-circle {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #0ea5e9;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .feature-card-simple {
+    padding: 2rem;
+    background-color: #f8fafc;
+    border-radius: 1rem;
+    border: 1px solid #f1f5f9;
+  }
+  .feature-card-simple h4 {
+    font-weight: 700;
+    color: #172554;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+  }
+  .feature-card-simple p {
+    color: #475569;
+    font-size: 0.875rem;
+  }
+  @media (min-width: 768px) {
+    .section-container {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+</style>

@@ -1,0 +1,198 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import FAQ from "../components/FAQ.astro";
+import "../styles/shared-pages.css";
+
+const faqs = [
+  {
+    question: "¿Cómo puedo rastrear mi envío?",
+    answer:
+      "Ofrecemos una plataforma de rastreo en tiempo real disponible 24/7. Una vez confirmada su carga, recibirá un código de seguimiento y acceso a nuestro portal.",
+  },
+  {
+    question: "¿Cuáles son los tiempos promedio de entrega?",
+    answer:
+      "Los tiempos varían según la modalidad: Aéreo (2-5 días), Marítimo (15-45 días según ruta) y Terrestre (dependiendo de la distancia). Siempre proporcionamos una ventana estimada de llegada.",
+  },
+  {
+    question: "¿Manejan cargas peligrosas o especiales?",
+    answer:
+      "Sí, contamos con certificaciones para el manejo de mercancías peligrosas, perecederos y carga sobredimensionada. Consultenos para requisitos específicos de embalaje y permisos.",
+  },
+];
+---
+
+<Layout
+  title="Transporte Internacional | GlobalFreight Logistics"
+  currentPath="transporte"
+>
+  <div class="pt-24 bg-white">
+    <header class="page-header bg-slate-900">
+      <div class="page-header-bg">
+        <img
+          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1600"
+          class="page-header-img"
+          alt="Transport Logistics Background"
+        />
+        <div
+          class="page-header-overlay"
+          style="background: linear-gradient(to right, #0f172a, rgba(15, 23, 42, 0.8), transparent);"
+        >
+        </div>
+      </div>
+      <div class="section-container page-header-content">
+        <span class="page-subtitle text-sky-400">Logística Global</span>
+        <h1 class="page-title">
+          Transporte <span class="text-sky-400">Internacional</span>
+        </h1>
+        <p class="page-desc text-blue-100">
+          Movemos más de 300 contenedores mensuales por todo el globo. Nuestra
+          red multimodal asegura que su carga llegue a tiempo, con total
+          visibilidad y seguridad.
+        </p>
+      </div>
+    </header>
+
+    <section class="section-py section-container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0a2 2 0 012 2v1a2 2 0 01-2 2H4a2 2 0 01-2-2v-1a2 2 0 012-2m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+              ></path></svg
+            >
+          </div>
+          <h3 class="feature-title">Marítimo (FCL/LCL)</h3>
+          <p class="feature-text">
+            Alianzas estratégicas con las principales navieras para ofrecer
+            espacios garantizados y tarifas competitivas en carga contenerizada
+            y consolidada.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg
+            >
+          </div>
+          <h3 class="feature-title">Aéreo Express</h3>
+          <p class="feature-text">
+            Ideal para carga crítica, perecederos o de alto valor. Priorizamos
+            la velocidad sin comprometer la seguridad de su mercancía.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+              ></path></svg
+            >
+          </div>
+          <h3 class="feature-title">Terrestre Nacional</h3>
+          <p class="feature-text">
+            Conectamos puertos y aeropuertos con su puerta final. Cobertura
+            nacional con monitoreo satelital y custodia opcional.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="highlight-block bg-white"
+        style="background-color: #f0f9ff; border: 1px solid #e0f2fe;"
+      >
+        <div class="highlight-grid">
+          <div>
+            <h2
+              class="text-blue-950"
+              style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem;"
+            >
+              Capacidad de Respuesta Real
+            </h2>
+            <p
+              class="text-slate-600"
+              style="margin-bottom: 2rem; font-size: 1.125rem;"
+            >
+              Nuestro volumen de operación de <strong
+                >300 contenedores mensuales</strong
+              > no es solo una cifra; es el respaldo de que sabemos manejar situaciones
+              complejas, congestiones portuarias y negociaciones de fletes a gran
+              escala.
+            </p>
+            <ul class="check-list">
+              <li class="check-item text-blue-950">
+                <svg
+                  class="check-icon text-sky-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path></svg
+                >
+                <span>Seguimiento en tiempo real 24/7</span>
+              </li>
+              <li class="check-item text-blue-950">
+                <svg
+                  class="check-icon text-sky-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path></svg
+                >
+                <span>Consolidación de carga propia</span>
+              </li>
+              <li class="check-item text-blue-950">
+                <svg
+                  class="check-icon text-sky-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path></svg
+                >
+                <span>Alianzas IATA y WCA</span>
+              </li>
+              <li class="check-item text-blue-950">
+                <svg
+                  class="check-icon text-sky-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path></svg
+                >
+                <span>Seguro de carga puerta a puerta</span>
+              </li>
+            </ul>
+          </div>
+          <div class="rounded-image">
+            <img
+              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800"
+              alt="Trucking logistics"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faqs} />
+    <ContactForm />
+  </div>
+</Layout>

@@ -1,0 +1,83 @@
+---
+import "../styles/components/Hero.css";
+---
+
+<section class="hero">
+  <!-- Background patterns -->
+  <div class="hero-bg-overlay">
+    <div class="hero-gradient"></div>
+    <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path
+            d="M 40 0 L 0 0 0 40"
+            fill="none"
+            stroke="white"
+            stroke-width="0.5"></path>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)"></rect>
+    </svg>
+  </div>
+
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">Logística Sin Fronteras</div>
+      <h1 class="hero-title">
+        Conectamos su negocio con el <span>Mundo Entero</span>
+      </h1>
+      <p class="hero-description">
+        Soluciones logísticas integrales: desde el despacho aduanal hasta el
+        transporte multimodal aéreo, marítimo y terrestre.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Solicitar Cotización</a>
+        <a href="#services" class="btn-outline">Nuestros Servicios</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-value">15+</span>
+          <span class="stat-label">Años Exp.</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">120+</span>
+          <span class="stat-label">Países</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">5k+</span>
+          <span class="stat-label">Clientes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-wrapper">
+      <div class="hero-image-container">
+        <img
+          src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&q=80&w=800&h=600"
+          alt="Global Logistics Container Ship"
+          class="hero-main-img"
+        />
+        <div class="hero-img-overlay"></div>
+      </div>
+      <!-- Floating badge -->
+      <div class="hero-floating-badge">
+        <div class="badge-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="badge-text-primary">Carga Protegida</p>
+          <p class="badge-text-secondary">Seguimiento 24/7 en tiempo real</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

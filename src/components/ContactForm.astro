@@ -1,0 +1,322 @@
+---
+import "../styles/components/ContactForm.css";
+
+const serviceTypes = [
+  "Despacho aduanal",
+  "Transporte marítimo",
+  "Transporte aéreo",
+  "Transporte terrestre",
+  "Comercializadora",
+  "Almacenaje / Depósito Fiscal",
+  "Seguro de Mercancía",
+  "Trámites Especiales (COFEPRIS/SEMARNAT)",
+  "Otro",
+];
+---
+
+<section id="contact" class="contact-form-section">
+  <div class="contact-container">
+    <div class="contact-wrapper">
+      <!-- Info Side -->
+      <div class="contact-info">
+        <h2>Contáctenos</h2>
+        <p class="contact-desc">
+          Solicite una cotización personalizada o resuelva sus dudas con
+          nuestros especialistas.
+        </p>
+
+        <div class="contact-details">
+          <div class="detail-item">
+            <div class="detail-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg
+              >
+            </div>
+            <div class="detail-text">
+              <p>Dirección</p>
+              <p>
+                Av. Internacional 1234, Ciudad de Carga, World Trade Center.
+              </p>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path></svg
+              >
+            </div>
+            <div class="detail-text">
+              <p>Email</p>
+              <p>contacto@globalfreight.com</p>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path></svg
+              >
+            </div>
+            <div class="detail-text">
+              <p>Teléfono / WhatsApp</p>
+              <p>+54 9 11 1234 5678</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <div class="social-icon">
+            <svg fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              ></path></svg
+            >
+          </div>
+          <div class="social-icon">
+            <svg fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              ></path></svg
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Side -->
+      <div class="contact-form-wrapper">
+        <div class="success-message" id="success-message">
+          <div>
+            <div class="success-icon-wrapper">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path></svg
+              >
+            </div>
+            <h3 class="success-title">¡Gracias!</h3>
+            <p class="success-desc">
+              Recibimos tu consulta con éxito. Un especialista comercial te
+              contactará en breve.
+            </p>
+            <button class="btn-reset" id="reset-btn">
+              Enviar otra consulta
+            </button>
+          </div>
+        </div>
+
+        <form id="contact-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Nombre y Apellido *</label>
+              <input
+                type="text"
+                name="name"
+                required
+                class="form-input"
+                placeholder="Ej: Juan Pérez"
+              />
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input
+                type="email"
+                name="email"
+                required
+                class="form-input"
+                placeholder="juan@empresa.com"
+              />
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Empresa</label>
+              <input
+                type="text"
+                name="company"
+                class="form-input"
+                placeholder="Nombre de su empresa"
+              />
+            </div>
+            <div class="form-group">
+              <label>Teléfono / WhatsApp</label>
+              <input
+                type="tel"
+                name="phone"
+                class="form-input"
+                placeholder="+54 9 ..."
+              />
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label>Tipo de Servicio</label>
+            <select name="service" class="form-select">
+              {serviceTypes.map((type) => <option value={type}>{type}</option>)}
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label>Mensaje *</label>
+            <textarea
+              name="message"
+              required
+              rows="4"
+              class="form-textarea"
+              placeholder="Cuéntenos sobre sus necesidades de transporte..."
+            ></textarea>
+          </div>
+
+          <div class="hidden">
+            <input
+              type="text"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
+          <p class="error-message" id="error-message"></p>
+
+          <button type="submit" class="btn-submit" id="submit-btn">
+            <svg
+              class="spinner"
+              id="spinner"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            <span id="btn-text">Solicitar Cotización Ahora</span>
+          </button>
+
+          <p class="disclaimer">
+            Al enviar este formulario, usted acepta nuestra política de
+            privacidad y el tratamiento de sus datos con fines comerciales.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const spinner = document.getElementById("spinner");
+  const btnText = document.getElementById("btn-text");
+  const errorMessage = document.getElementById("error-message");
+  const successMessage = document.getElementById("success-message");
+  const resetBtn = document.getElementById("reset-btn");
+
+  if (
+    form &&
+    submitBtn &&
+    spinner &&
+    btnText &&
+    errorMessage &&
+    successMessage &&
+    resetBtn
+  ) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Reset states
+      submitBtn.disabled = true;
+      spinner.style.display = "block";
+      btnText.innerText = "Enviando...";
+      errorMessage.style.display = "none";
+
+      const formData = new FormData(form);
+      const data: any = Object.fromEntries(formData.entries());
+
+      // Validation
+      if (!data.name || !data.email || !data.message) {
+        errorMessage.innerText =
+          "Por favor complete todos los campos obligatorios.";
+        errorMessage.style.display = "block";
+        submitBtn.disabled = false;
+        spinner.style.display = "none";
+        btnText.innerText = "Solicitar Cotización Ahora";
+        return;
+      }
+
+      const params = new URLSearchParams({
+        ...data,
+        pageUrl: window.location.href,
+        userAgent: navigator.userAgent,
+        source: "landing-logistica",
+      });
+
+      try {
+        await fetch(
+          "https://script.google.com/macros/s/AKfycbzyfjA--CJ2YTR06NaohOrZgTsRilWH3EfW5t1dGEoFQlYpB2tyoZC9rXunKYvx4hnD/exec",
+          {
+            method: "POST",
+            body: params,
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          }
+        );
+
+        // Success
+        successMessage.style.display = "flex";
+        form.reset();
+
+        // Auto reset after 10s
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 10000);
+      } catch (err) {
+        console.error("Error submitting form:", err);
+        errorMessage.innerText =
+          "Hubo un error al enviar el formulario. Por favor, intente nuevamente.";
+        errorMessage.style.display = "block";
+      } finally {
+        submitBtn.disabled = false;
+        spinner.style.display = "none";
+        btnText.innerText = "Solicitar Cotización Ahora";
+      }
+    });
+
+    resetBtn.addEventListener("click", () => {
+      successMessage.style.display = "none";
+    });
+  }
+</script>

@@ -1,0 +1,193 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import FAQ from "../components/FAQ.astro";
+import "../styles/shared-pages.css";
+
+const faqs = [
+  {
+    question: "¿Qué mercancías pueden importar?",
+    answer:
+      "Contamos con padrones para diversos sectores: electrónica, textil, maquinaria, calzado y mercancía general. Algunos sectores específicos requieren permisos especiales que también gestionamos.",
+  },
+  {
+    question: "¿Es seguro usar una comercializadora?",
+    answer:
+      "Es totalmente legal y seguro. Nosotros fungimos como el importador de registro ante la aduana, asumiendo la responsabilidad legal de la entrada del producto, mientras usted mantiene la propiedad comercial del mismo.",
+  },
+  {
+    question: "¿Cuánto tiempo toma el proceso?",
+    answer:
+      "Si ya contamos con el padrón específico para su producto, la gestión es inmediata tras la llegada de la mercancía. Si requiere una NOM o etiqueta, añadimos 2-3 días al proceso.",
+  },
+];
+---
+
+<Layout
+  title="Comercializadora | GlobalFreight Logistics"
+  currentPath="comercializadora"
+>
+  <div class="pt-24 bg-white">
+    <header class="page-header bg-sky-500">
+      <div class="page-header-bg">
+        <img
+          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1600"
+          class="page-header-img"
+          alt="Business Trading Background"
+        />
+        <div
+          class="page-header-overlay"
+          style="background: linear-gradient(to right, #0284c7, rgba(14, 165, 233, 0.8), transparent);"
+        >
+        </div>
+      </div>
+      <div class="section-container page-header-content">
+        <span class="page-subtitle text-white">Seguridad Comercial</span>
+        <h1 class="page-title">
+          Servicio de <span class="text-blue-950">Comercializadora</span>
+        </h1>
+        <p class="page-desc text-blue-100">
+          Nacionalizamos sus productos utilizando nuestro padrón de
+          importadores. La solución ideal para empresas que desean agilizar su
+          entrada al mercado sin trámites burocráticos.
+        </p>
+      </div>
+    </header>
+
+    <section class="section-py section-container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box" style="color: #0284c7;">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path></svg
+            >
+          </div>
+          <h3 class="feature-title">Padrón Sectorial</h3>
+          <p class="feature-text">
+            Acceso inmediato a diversos padrones sectoriales sin que su empresa
+            tenga que gestionar altas costosas y tardadas ante el SAT.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-box" style="color: #0284c7;">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A10.003 10.003 0 004.22 12c0-1.87.511-3.62 1.4-5.127m3.159 10.203c.54-.057 1.088-.087 1.641-.087 5.523 0 10 4.477 10 10a9.991 9.991 0 01-1.2 4.744m-11.973-9.203a9.969 9.969 0 010-10a9.969 9.969 0 0110 10m-10 10a9.969 9.969 0 0110-10"
+              ></path></svg
+            >
+          </div>
+          <h3 class="feature-title">Cumplimiento NOM</h3>
+          <p class="feature-text">
+            Gestión de Normas Oficiales Mexicanas, etiquetado en origen o
+            destino, y cumplimiento de regulaciones no arancelarias.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-box" style="color: #0284c7;">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path></svg
+            >
+          </div>
+          <h3 class="feature-title">Representación Fiscal</h3>
+          <p class="feature-text">
+            Elimine riesgos fiscales para su empresa principal. Nosotros
+            asumimos el rol de importador frente a las autoridades.
+          </p>
+        </div>
+      </div>
+
+      <div class="highlight-block bg-slate-900 text-white">
+        <div class="highlight-grid">
+          <div>
+            <h2
+              class="text-white"
+              style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem;"
+            >
+              La Ventaja Estratégica
+            </h2>
+            <p
+              class="text-slate-300"
+              style="margin-bottom: 2rem; font-size: 1.125rem;"
+            >
+              Utilizar nuestra comercializadora le permite enfocarse en las
+              ventas y el crecimiento de su marca, mientras nosotros resolvemos
+              la complejidad del comercio exterior.
+            </p>
+            <ul class="check-list">
+              <li class="check-item text-blue-100">
+                <svg
+                  class="check-icon text-sky-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path></svg
+                >
+                <span>Seguridad jurídica en cada operación</span>
+              </li>
+              <li class="check-item text-blue-100">
+                <svg
+                  class="check-icon text-sky-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path></svg
+                >
+                <span>Optimización de costos administrativos</span>
+              </li>
+              <li class="check-item text-blue-100">
+                <svg
+                  class="check-icon text-sky-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path></svg
+                >
+                <span>Confidencialidad absoluta de sus proveedores</span>
+              </li>
+              <li class="check-item text-blue-100">
+                <svg
+                  class="check-icon text-sky-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path></svg
+                >
+                <span>Gestión integral de impuestos de importación</span>
+              </li>
+            </ul>
+          </div>
+          <div class="rounded-image" style="transform: rotate(1deg);">
+            <img
+              src="https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&q=80&w=800"
+              alt="Contracts and business"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faqs} />
+    <ContactForm />
+  </div>
+</Layout>

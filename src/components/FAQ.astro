@@ -1,0 +1,80 @@
+---
+import "../styles/components/FAQ.css";
+
+interface Props {
+  items: {
+    question: string;
+    answer: string;
+  }[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="faq">
+  <div class="faq-container">
+    <div class="faq-header">
+      <h2>Preguntas Frecuentes</h2>
+      <p>Resolvemos sus dudas más comunes sobre este servicio.</p>
+    </div>
+
+    <div class="faq-list">
+      {
+        items.map((item, index) => (
+          <div class="faq-item">
+            <button
+              class="faq-button"
+              aria-controls={`faq-answer-${index}`}
+              aria-expanded="false"
+            >
+              <span class="faq-question">{item.question}</span>
+              <svg
+                class="faq-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            <div class="faq-answer-wrapper" id={`faq-answer-${index}`}>
+              <p class="faq-answer">{item.answer}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const faqButtons = document.querySelectorAll(".faq-button");
+
+  faqButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = button.parentElement;
+      if (item) {
+        // Close others if you want accordion style (optional, but typical)
+        const allItems = document.querySelectorAll(".faq-item");
+        allItems.forEach((otherItem) => {
+          if (otherItem !== item && otherItem.classList.contains("active")) {
+            otherItem.classList.remove("active");
+            const otherBtn = otherItem.querySelector(".faq-button");
+            if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Toggle current
+        item.classList.toggle("active");
+        const isExpanded = item.classList.contains("active");
+        button.setAttribute("aria-expanded", String(isExpanded));
+      }
+    });
+  });
+</script>
