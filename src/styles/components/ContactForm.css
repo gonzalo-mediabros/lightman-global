@@ -5,7 +5,7 @@
 }
 
 .contact-container {
-    max-width: 1024px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -106,6 +106,7 @@
     justify-content: center;
     transition: background-color 0.3s;
     cursor: pointer;
+    position: relative
 }
 
 .social-icon:hover {
@@ -113,6 +114,8 @@
 }
 
 .social-icon svg {
+    max-width: 100%;
+    max-height: 100%;
     width: 1rem;
     height: 1rem;
     fill: currentColor;

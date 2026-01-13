@@ -36,15 +36,18 @@
 }
 
 .logo-icon {
-    width: 2rem;
-    height: 2rem;
-    background-color: #0ea5e9; /* sky-500 */
-    border-radius: 0.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 8rem;
+    height: 8rem;
+    /* background-color: #0ea5e9;  */
+    /* border-radius: 0.25rem; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
 }
-
+.scrolled .logo-icon {
+    width: 4rem;
+    height: 4rem;
+}
 .logo-icon svg {
     width: 1.25rem;
     height: 1.25rem;

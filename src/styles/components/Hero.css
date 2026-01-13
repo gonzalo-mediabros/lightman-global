@@ -5,7 +5,7 @@
     align-items: center;
     padding-top: 5rem;
     overflow: hidden;
-    background-color: #172554; /* blue-950 */
+    background-color: #00003f; /* blue-950 */
 }
 
 .hero-bg-overlay {
@@ -211,7 +211,7 @@
 .badge-icon {
     width: 2.5rem;
     height: 2.5rem;
-    background-color: #22c55e;
+    background-color: #ffd107;
     border-radius: 9999px;
     display: flex;
     align-items: center;
