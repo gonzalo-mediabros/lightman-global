@@ -12,6 +12,10 @@ const serviceTypes = [
   "Trámites Especiales (COFEPRIS/SEMARNAT)",
   "Otro",
 ];
+
+// Configuración de Seguridad y Endpoint
+const SCRIPT_URL = import.meta.env.PUBLIC_SCRIPT_URL;
+const API_KEY = import.meta.env.PUBLIC_SCRIPT_API_KEY;
 ---
 
 <section id="contact" class="contact-form-section">
@@ -86,7 +90,8 @@ const serviceTypes = [
               <p>Teléfono / WhatsApp</p>
               <p>
                 <a href="tel:+5491112345678" target="_blank"
-                  >+54 9 11 1234 5678</a>
+                  >+54 9 11 1234 5678</a
+                >
               </p>
             </div>
           </div>
@@ -150,7 +155,7 @@ const serviceTypes = [
           </div>
         </div>
 
-        <form id="contact-form">
+        <form id="contact-form" data-url={SCRIPT_URL} data-apikey={API_KEY}>
           <div class="form-grid">
             <div class="form-group">
               <label>Nombre y Apellido *</label>
@@ -299,27 +304,32 @@ const serviceTypes = [
         return;
       }
 
-      const params = new URLSearchParams({
+      // Payload con Seguridad
+      const payload: any = {
         ...data,
+        api_key: form.dataset.apikey,
+        origin: window.location.hostname,
         pageUrl: window.location.href,
         userAgent: navigator.userAgent,
         source: "landing-logistica",
-      });
+      };
 
       try {
-        await fetch(
-          "https://script.google.com/macros/s/AKfycbzyfjA--CJ2YTR06NaohOrZgTsRilWH3EfW5t1dGEoFQlYpB2tyoZC9rXunKYvx4hnD/exec",
-          {
-            method: "POST",
-            body: params,
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-          }
-        );
+        // Usamos URLSearchParams para asegurar que los caracteres UTF-8 (emojis, tildes)
+        // se codifiquen correctamente antes de llegar a Google Apps Script.
+        const body = new URLSearchParams(payload);
 
-        // Success
+        await fetch(form.dataset.url || "", {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+          },
+          body: body,
+        });
+
+        // En modo no-cors no podemos leer la respuesta, pero si fetch no da error,
+        // asumimos que llegó al servidor de Google (standard para GAS).
         successMessage.style.display = "flex";
         form.reset();
 
