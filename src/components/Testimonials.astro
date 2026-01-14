@@ -5,19 +5,19 @@ const reviews = [
   {
     name: "Carlos Méndez",
     role: "Director de Operaciones",
-    company: "InduTech Corp",
+    company: "",
     text: "GlobalFreight transformó nuestra cadena de suministro. El despacho aduanal que solía tomarnos días, ahora se resuelve en horas gracias a su equipo experto.",
   },
   {
     name: "Elena Rodríguez",
     role: "Gerente de Exportaciones",
-    company: "FruitGlobal S.A.",
+    company: "",
     text: "La confianza es clave cuando mueves productos perecederos. Su servicio de transporte aéreo es impecable y siempre llegan a tiempo.",
   },
   {
     name: "Roberto Silva",
     role: "CEO",
-    company: "Silven Import",
+    company: "",
     text: "Excelente servicio de consolidación. Han logrado reducir nuestros costos logísticos en un 25% anual desde que empezamos a trabajar juntos.",
   },
 ];
@@ -47,7 +47,7 @@ const reviews = [
               <div class="author-info">
                 <h4>{rev.name}</h4>
                 <p>
-                  {rev.role} - {rev.company}
+                  {rev.role} {rev.company}
                 </p>
               </div>
             </div>
