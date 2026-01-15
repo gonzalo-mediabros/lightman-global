@@ -1,12 +1,12 @@
 /**
- * LEADS MB V-2.0
+ * LEADS MB V-3.0
  */
 
 // --- BLOQUE DE CONFIGURACIÓN ---
 const CONFIG = {
   SHEET_NAME: "Leadsmb",
   BRAND_NAME: "Lightman Global",
-  ALLOWED_DOMAIN: "localhost, lightman-global-v3.vercel.app",
+  ALLOWED_DOMAIN: "localhost, lightman-global-v3.vercel.app, mediabros.cl",
   API_KEY: "Messi-10-Capitan",
   HONEYPOT_FIELD: "website",
   
@@ -14,15 +14,15 @@ const CONFIG = {
   EMAILS: {
     ADMIN: {
       TO: "ferraropablo@gmail.com, gon.williams@gmail.com", // Puedes agregar varios emails separados por coma
-      SUBJECT: "🚀 Nuevo Lead: {{name}} - {{brand}}",
+      SUBJECT: "\uD83D\uDE80 Nuevo Lead: {{name}} - {{brand}}",
       // Template HTML para el cuerpo del mail
-      BODY: "<h3>🚀 Se ha recibido un nuevo lead</h3><p>Detalles del contacto:</p><div style='background:#f4f4f4;padding:15px;border-radius:5px;'>{{details}}</div><br><hr><p>Enviado desde el sitio web de {{brand}}</p>"
+      BODY: "<h3>\uD83D\uDE80 Se ha recibido un nuevo lead</h3><p>Detalles del contacto:</p><div style='background:#f4f4f4;padding:15px;border-radius:5px;'>{{details}}</div><br><hr><p>Enviado desde el sitio web de {{brand}}</p>"
     },
     USER: {
       ENABLE: true, // cambia a false para deshabilitar
-      SUBJECT: "✨ Confirmación de contacto — {{brand}}",
+      SUBJECT: "\u2728 Confirmación de contacto — {{brand}}",
       // Template HTML para el cuerpo del mail
-      BODY: "<h3>¡Hola {{name}}! 👋</h3><p>Hemos recibido tu consulta correctamente en <strong>{{brand}}</strong>.</p><p>Un especialista se pondrá en contacto contigo a la brevedad.</p><br><p>Saludos,<br>El equipo de <strong>{{brand}}</strong> ✨</p>"
+      BODY: "<h3>¡Hola {{name}}! \uD83D\uDC4B</h3><p>Hemos recibido tu consulta correctamente en <strong>{{brand}}</strong>.</p><p>Un especialista se pondrá en contacto contigo a la brevedad.</p><br><p>Saludos,<br>El equipo de <strong>{{brand}}</strong> \u2728</p>"
     }
   }
 };

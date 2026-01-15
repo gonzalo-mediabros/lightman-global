@@ -16,7 +16,7 @@ const {
   title,
   description = "Lightman Global - Liderazgo en Logística Internacional y Servicios Aduanales",
   currentPath = "home",
-  image = "/images/logo-lightman-2.png", // Using logo as fallback
+  image = "/images/lightman-global-cover.avif",
   canonicalURL = Astro.url.href,
 } = Astro.props;
 ---
@@ -39,6 +39,8 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:site_name" content="Lightman Global" />
+    <meta property="og:locale" content="es_MX" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -48,8 +50,8 @@ const {
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
     <link
       rel="icon"
-      type="image/svg+xml"
-      href={`${import.meta.env.BASE_URL}favicon.svg`}
+      type="image/png"
+      href={`${import.meta.env.BASE_URL}images/logo-lightman-2.png`}
     />
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,7 +61,7 @@ const {
       rel="stylesheet"
     />
     <!-- Google Tag Manager -->
-    <!-- <script is:inline>
+    <script is:inline>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -70,7 +72,7 @@ const {
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-5HKLSZDW");
-    </script> -->
+    </script>
     <!-- End Google Tag Manager -->
   </head>
   <body class="bg-white text-slate-900">
