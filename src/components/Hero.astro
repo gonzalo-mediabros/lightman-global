@@ -1,5 +1,6 @@
 ---
 import "../styles/components/Hero.css";
+import { Icon } from "astro-icon/components";
 ---
 
 <section class="hero">
@@ -65,13 +66,7 @@ import "../styles/components/Hero.css";
       <!-- Floating badge -->
       <div class="hero-floating-badge">
         <div class="badge-icon">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5 13l4 4L19 7"></path>
-          </svg>
+          <Icon name="lucide:check" />
         </div>
         <div>
           <p class="badge-text-primary">Carga Protegida</p>

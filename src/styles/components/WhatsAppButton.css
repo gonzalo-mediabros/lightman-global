@@ -3,11 +3,12 @@
     bottom: 1.5rem;
     right: 1.5rem;
     z-index: 9999;
-    background-color: #25D366;
+    /* background-color: #25D366; */
     color: white;
-    padding: 1rem;
+    width: 70px;
+    /* padding: 1rem; */
     border-radius: 9999px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); */
     transition: all 0.3s;
     display: flex;
     align-items: center;
@@ -16,7 +17,7 @@
 }
 
 .whatsapp-btn:hover {
-    background-color: #20ba5a;
+    /* background-color: #20ba5a; */
     transform: scale(1.1);
 }
 

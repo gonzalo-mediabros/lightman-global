@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContactForm from "../components/ContactForm.astro";
+import { Icon } from "astro-icon/components";
 import "../styles/shared-pages.css";
 ---
 
 <Layout
-  title="Almacén y Depósito Fiscal | GlobalFreight Logistics"
+  title="Almacén y Depósito Fiscal | Lightman Global"
+  description="Servicios de almacenamiento general y depósito fiscal. Infraestructura segura para el resguardo de su carga, etiquetado NOM y servicios de cross-docking."
   currentPath="almacenadora"
 >
   <div class="pt-24 bg-white">
@@ -15,11 +17,7 @@ import "../styles/shared-pages.css";
         style="display: flex; gap: 2rem; align-items: center; flex-direction: column;"
       >
         <div class="header-icon-box">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            ><path
-              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-            ></path></svg
-          >
+          <Icon name="lucide:warehouse" />
         </div>
         <div style="text-align: center;">
           <span class="page-subtitle text-sky-500">División Especializada</span>
@@ -131,14 +129,14 @@ import "../styles/shared-pages.css";
     align-items: center;
     justify-content: center;
   }
-  .header-icon-box svg {
+  .header-icon-box :global(svg) {
     width: 3rem;
     height: 3rem;
   }
   .step-circle {
     width: 2.5rem;
     height: 2.5rem;
-    background-color: #0ea5e9;
+    background-color: #1f51a7;
     border-radius: 9999px;
     display: flex;
     align-items: center;
@@ -154,7 +152,7 @@ import "../styles/shared-pages.css";
   }
   .feature-card-simple h4 {
     font-weight: 700;
-    color: #172554;
+    color: #00003f;
     margin-bottom: 1rem;
     font-size: 1.125rem;
   }

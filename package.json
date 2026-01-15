@@ -11,10 +11,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.16.0"
+    "@astrojs/check": "^0.9.6",
+    "@iconify-json/lucide": "^1.2.85",
+    "astro": "^4.16.0",
+    "astro-icon": "^1.1.5"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
     "typescript": "~5.8.2"
+  },
+  "overrides": {
+    "undici": "^6.21.1"
   }
 }

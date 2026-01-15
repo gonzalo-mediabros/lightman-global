@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import icon from 'astro-icon';
 
 
 /*
@@ -11,6 +12,7 @@ import { defineConfig } from 'astro/config';
 //   build: {
 //     assetsPrefix: '/lightman/'
 //   }
+//  integrations: [icon()]
 // });
 
 /*
@@ -21,5 +23,6 @@ export default defineConfig({
   base: './',
   build: {
     assetsPrefix: './'
-  }
+  },
+  integrations: [icon()]
 });

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import ContactForm from "../components/ContactForm.astro";
 import FAQ from "../components/FAQ.astro";
+import { Icon } from "astro-icon/components";
 import "../styles/shared-pages.css";
 
 const faqs = [
@@ -24,7 +25,8 @@ const faqs = [
 ---
 
 <Layout
-  title="Comercializadora | GlobalFreight Logistics"
+  title="Comercializadora de Importación | Lightman Global"
+  description="Lleve a cabo sus importaciones sin necesidad de padrón propio. Servicio de comercializadora integral, gestión de NOMs y nacionalización de mercancías."
   currentPath="comercializadora"
 >
   <div class="pt-24 bg-white">
@@ -58,14 +60,7 @@ const faqs = [
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon-box" style="color: #0284c7;">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              ></path></svg
-            >
+            <Icon name="lucide:file-text" />
           </div>
           <h3 class="feature-title">Padrón Sectorial</h3>
           <p class="feature-text">
@@ -75,14 +70,7 @@ const faqs = [
         </div>
         <div class="feature-card">
           <div class="feature-icon-box" style="color: #0284c7;">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A10.003 10.003 0 004.22 12c0-1.87.511-3.62 1.4-5.127m3.159 10.203c.54-.057 1.088-.087 1.641-.087 5.523 0 10 4.477 10 10a9.991 9.991 0 01-1.2 4.744m-11.973-9.203a9.969 9.969 0 010-10a9.969 9.969 0 0110 10m-10 10a9.969 9.969 0 0110-10"
-              ></path></svg
-            >
+            <Icon name="lucide:globe" />
           </div>
           <h3 class="feature-title">Cumplimiento NOM</h3>
           <p class="feature-text">
@@ -92,14 +80,7 @@ const faqs = [
         </div>
         <div class="feature-card">
           <div class="feature-icon-box" style="color: #0284c7;">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-              ></path></svg
-            >
+            <Icon name="lucide:shield-check" />
           </div>
           <h3 class="feature-title">Representación Fiscal</h3>
           <p class="feature-text">
@@ -128,51 +109,31 @@ const faqs = [
             </p>
             <ul class="check-list">
               <li class="check-item text-blue-100">
-                <svg
+                <Icon
+                  name="lucide:check-circle"
                   class="check-icon text-sky-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  ><path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path></svg
-                >
+                />
                 <span>Seguridad jurídica en cada operación</span>
               </li>
               <li class="check-item text-blue-100">
-                <svg
+                <Icon
+                  name="lucide:check-circle"
                   class="check-icon text-sky-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  ><path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path></svg
-                >
+                />
                 <span>Optimización de costos administrativos</span>
               </li>
               <li class="check-item text-blue-100">
-                <svg
+                <Icon
+                  name="lucide:check-circle"
                   class="check-icon text-sky-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  ><path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path></svg
-                >
+                />
                 <span>Confidencialidad absoluta de sus proveedores</span>
               </li>
               <li class="check-item text-blue-100">
-                <svg
+                <Icon
+                  name="lucide:check-circle"
                   class="check-icon text-sky-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  ><path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path></svg
-                >
+                />
                 <span>Gestión integral de impuestos de importación</span>
               </li>
             </ul>
