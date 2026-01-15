@@ -67,7 +67,7 @@
 .section-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 3rem 1rem;
 }
 
 /* Feature Cards Grid */
@@ -99,7 +99,7 @@
     width: 3.5rem;
     height: 3.5rem;
     background-color: #f0f9ff; /* sky-50 */
-    color: #0ea5e9; /* sky-500 */
+    color: #1f51a7; /* sky-500 */
     border-radius: 1rem;
     display: flex;
     align-items: center;
@@ -115,7 +115,7 @@
 .feature-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #172554;
+    color: #00003f;
     margin-bottom: 1rem;
 }
 
@@ -126,16 +126,16 @@
 
 /* Text Colors */
 .text-sky-400 { color: #38bdf8; }
-.text-sky-500 { color: #0ea5e9; }
-.text-blue-950 { color: #172554; }
+.text-sky-500 { color: #1f51a7; }
+.text-blue-950 { color: #00003f; }
 .text-slate-600 { color: #475569; }
 .text-slate-300 { color: #cbd5e1; }
 .text-blue-100 { color: #dbeafe; }
 
 /* Backgrounds */
 .bg-white { background-color: white; }
-.bg-sky-500 { background-color: #0ea5e9; }
-.bg-slate-900 { background-color: #0f172a; }
+.bg-sky-500 { background-color: #1f51a7; }
+.bg-slate-900 { background-color: #00003f; }
 
 /* Utilities */
 .hidden { display: none; }

@@ -36,7 +36,7 @@
     width: 3.5rem;
     height: 3.5rem;
     background-color: #eff6ff; /* blue-50 */
-    color: #0ea5e9; /* sky-500 */
+    color: #1f51a7; /* sky-500 */
     border-radius: 0.75rem;
     display: flex;
     align-items: center;
@@ -46,7 +46,7 @@
 }
 
 .service-card:hover .service-icon-wrapper {
-    background-color: #0ea5e9;
+    background-color: #1f51a7;
     color: white;
 }
 
@@ -58,7 +58,7 @@
 .service-card h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #172554;
+    color: #00003f;
     margin-bottom: 0.75rem;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .service-link {
-    color: #0ea5e9;
+    color: #1f51a7;
     font-weight: 700;
     font-size: 0.875rem;
     display: flex;

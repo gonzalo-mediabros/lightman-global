@@ -11,7 +11,7 @@
 }
 
 .home-intro h2 {
-    color: #172554;
+    color: #00003f;
     font-size: 1.875rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -31,7 +31,7 @@
 }
 
 .cta-section {
-    background-color: #172554;
+    background-color: #00003f;
     padding-top: 4rem;
     padding-bottom: 4rem;
     text-align: center;
@@ -59,7 +59,7 @@
 
 .btn-cta {
     display: inline-block;
-    background-color: #0ea5e9;
+    background-color: #1f51a7;
     color: white;
     font-weight: 600;
     padding: 0.75rem 2.5rem;

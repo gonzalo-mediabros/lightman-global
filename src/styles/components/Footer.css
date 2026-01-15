@@ -1,5 +1,5 @@
 .footer {
-    background-color: #0f172a; /* slate-900 */
+    background-color: #00003f; /* slate-900 */
     color: #94a3b8; /* slate-400 */
     padding-top: 3rem; /* py-12 */
     padding-bottom: 3rem;
@@ -10,18 +10,14 @@
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 1rem;
-}
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
 
-.footer-grid {
-    display: grid;
-    gap: 3rem;
-    margin-bottom: 3rem;
-    grid-template-columns: 1fr;
 }
-
 @media (min-width: 768px) {
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .footer .col{
+        width: 45%;
     }
 }
 
@@ -36,7 +32,7 @@
 .footer-logo-icon {
     width: 1.5rem;
     height: 1.5rem;
-    background-color: #0ea5e9;
+    background-color: #1f51a7;
     border-radius: 0.25rem;
     display: flex;
     align-items: center;

@@ -38,7 +38,7 @@
 .logo-icon {
     width: 8rem;
     height: 8rem;
-    /* background-color: #0ea5e9;  */
+    /* background-color: #1f51a7;  */
     /* border-radius: 0.25rem; */
     /* display: flex; */
     /* align-items: center; */
@@ -62,12 +62,12 @@
 }
 
 .logo-text span {
-    color: #0ea5e9; /* sky-500 */
+    color: #1f51a7; /* sky-500 */
 }
 
 .navbar.scrolled .logo-text,
 .navbar.not-home .logo-text {
-    color: #172554; /* blue-950 */
+    color: #00003f; /* blue-950 */
 }
 
 /* Desktop Menu */
@@ -104,15 +104,15 @@
 
 .navbar.scrolled .nav-link:hover,
 .navbar.not-home .nav-link:hover {
-    color: #0ea5e9; /* sky-500 */
+    color: #1f51a7; /* sky-500 */
 }
 
 .nav-link.active {
-    color: #0ea5e9 !important;
+    color: #1f51a7 !important;
 }
 
 .btn-quote {
-    background-color: #0ea5e9;
+    background-color: #1f51a7;
     color: white;
     padding: 0.5rem 1.5rem;
     border-radius: 0.5rem;
@@ -133,7 +133,7 @@
 /* Mobile Toggle */
 .mobile-toggle {
     display: block;
-    color: #0ea5e9;
+    color: #1f51a7;
     padding: 0.5rem;
     background: none;
     border: none;
@@ -179,7 +179,7 @@
 .mobile-nav-link {
     font-size: 1.125rem;
     font-weight: 700;
-    color: #172554; /* blue-950 */
+    color: #00003f; /* blue-950 */
     border-bottom: 1px solid #f8fafc;
     padding-bottom: 0.5rem;
     text-decoration: none;
@@ -190,7 +190,7 @@
 }
 
 .mobile-btn-quote {
-    background-color: #0ea5e9;
+    background-color: #1f51a7;
     color: white;
     padding: 1rem;
     border-radius: 0.75rem;

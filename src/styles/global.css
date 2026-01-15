@@ -15,12 +15,17 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: #ffffff;
-  color: #0f172a;
+  color: #00003f;
 }
 
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
+}
+
+[data-icon],
+[data-icon] * {
+  stroke-width: 1.5px !important;
 }
 
 input, button, textarea, select {
@@ -42,11 +47,11 @@ ul {
 
 /* Global Variables */
 :root {
-  --color-primary: #0ea5e9; /* sky-500 */
+  --color-primary: #1f51a7; /* sky-500 */
   --color-primary-hover: #38bdf8; /* sky-400 */
-  --color-dark: #172554; /* blue-950 */
+  --color-dark: #00003f; /* blue-950 */
   --color-slate-600: #475569;
-  --color-slate-900: #0f172a;
+  --color-slate-900: #00003f;
 }
 
 /* Utilities */

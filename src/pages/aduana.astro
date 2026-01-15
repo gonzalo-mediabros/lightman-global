@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import ContactForm from "../components/ContactForm.astro";
 import FAQ from "../components/FAQ.astro";
+import { Icon } from "astro-icon/components";
 import "../styles/shared-pages.css";
 
 const faqs = [
@@ -34,7 +35,7 @@ const faqs = [
         />
         <div
           class="page-header-overlay"
-          style="background: linear-gradient(to right, #0f172a, rgba(15, 23, 42, 0.9), transparent);"
+          style="background: linear-gradient(to right, #00003f, rgba(15, 23, 42, 0.9), transparent);"
         >
         </div>
       </div>
@@ -55,14 +56,7 @@ const faqs = [
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon-box">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              ></path></svg
-            >
+            <Icon name="lucide:file-text" />
           </div>
           <h3 class="feature-title">Gestión Aduanera</h3>
           <p class="feature-text">
@@ -72,14 +66,7 @@ const faqs = [
         </div>
         <div class="feature-card">
           <div class="feature-icon-box">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.183.244l-.28.14a2 2 0 01-2.983-1.832V4.37a2 2 0 012.828-1.84l.3.135a2 2 0 001.548.05l2.315-.772a6 6 0 013.785 0l2.315.772a2 2 0 001.548-.05l.3-.135a2 2 0 012.828 1.84v7.006a2 2 0 01-1.183 1.832l-1.082.541z"
-              ></path></svg
-            >
+            <Icon name="lucide:map" />
           </div>
           <h3 class="feature-title">Clasificación Arancelaria</h3>
           <p class="feature-text">
@@ -89,14 +76,7 @@ const faqs = [
         </div>
         <div class="feature-card">
           <div class="feature-icon-box">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-              ></path></svg
-            >
+            <Icon name="lucide:clipboard-check" />
           </div>
           <h3 class="feature-title">Trámites Especiales</h3>
           <p class="feature-text">
@@ -108,7 +88,7 @@ const faqs = [
 
       <div
         class="highlight-block bg-sky-500 text-white"
-        style="background-color: #0ea5e9; border: 1px solid #38bdf8;"
+        style="background-color: #1f51a7; border: 1px solid #38bdf8;"
       >
         <div class="highlight-grid">
           <div>
@@ -128,51 +108,31 @@ const faqs = [
             </p>
             <ul class="check-list">
               <li class="check-item text-white">
-                <svg
+                <Icon
+                  name="lucide:check-circle"
                   class="check-icon text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  ><path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path></svg
-                >
+                />
                 <span>Auditoría preventiva de documentos</span>
               </li>
               <li class="check-item text-white">
-                <svg
+                <Icon
+                  name="lucide:check-circle"
                   class="check-icon text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  ><path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path></svg
-                >
+                />
                 <span>Cálculo de impuestos proyectado</span>
               </li>
               <li class="check-item text-white">
-                <svg
+                <Icon
+                  name="lucide:check-circle"
                   class="check-icon text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  ><path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path></svg
-                >
+                />
                 <span>Revisión de NOMs y etiquetado</span>
               </li>
               <li class="check-item text-white">
-                <svg
+                <Icon
+                  name="lucide:check-circle"
                   class="check-icon text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  ><path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path></svg
-                >
+                />
                 <span>Pólizas de seguro de mercancía inmediatas</span>
               </li>
             </ul>
@@ -200,7 +160,7 @@ const faqs = [
   .feature-cta {
     display: inline-block;
     background-color: white;
-    color: #0ea5e9;
+    color: #1f51a7;
     font-weight: 700;
     padding: 0.75rem 2rem;
     border-radius: 0.75rem;

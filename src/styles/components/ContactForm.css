@@ -27,7 +27,7 @@
 }
 
 .contact-info {
-    background-color: #172554; /* blue-950 */
+    background-color: #00003f; /* blue-950 */
     padding: 3rem;
     color: white;
     width: 100%;
@@ -110,7 +110,7 @@
 }
 
 .social-icon:hover {
-    background-color: #0ea5e9;
+    background-color: #1f51a7;
 }
 
 .social-icon svg {
@@ -166,7 +166,7 @@
 }
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
-    border-color: #0ea5e9;
+    border-color: #1f51a7;
     box-shadow: 0 0 0 2px #bae6fd;
 }
 
@@ -190,7 +190,7 @@
     width: 100%;
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: #0ea5e9;
+    background-color: #1f51a7;
     color: white;
     font-weight: 700;
     border: none;
@@ -259,7 +259,7 @@
 .success-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #172554;
+    color: #00003f;
     margin-bottom: 1rem;
 }
 
@@ -270,7 +270,7 @@
 }
 
 .btn-reset {
-    color: #0ea5e9;
+    color: #1f51a7;
     font-weight: 700;
     background: none;
     border: none;

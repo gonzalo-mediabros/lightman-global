@@ -1,7 +1,7 @@
 .coverage {
     padding-top: 6rem;
     padding-bottom: 6rem;
-    background-color: #0f172a; /* slate-900 */
+    background-color: #00003f; /* slate-900 */
     color: white;
     position: relative;
     overflow: hidden;
@@ -117,7 +117,7 @@
 .region-dot {
     width: 0.75rem;
     height: 0.75rem;
-    background-color: #0ea5e9;
+    background-color: #1f51a7;
     border-radius: 9999px;
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

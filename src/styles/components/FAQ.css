@@ -5,7 +5,7 @@
 }
 
 .faq-container {
-    max-width: 56rem; /* max-w-4xl */
+    max-width: 1280px; /* max-w-4xl */
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -18,7 +18,7 @@
 .faq-header h2 {
     font-size: 1.875rem;
     font-weight: 700;
-    color: #172554;
+    color: #00003f;
     margin-bottom: 1rem;
 }
 
@@ -61,19 +61,19 @@
 
 .faq-question {
     font-weight: 700;
-    color: #172554;
+    color: #00003f;
     font-size: 1.125rem;
     transition: color 0.3s;
 }
 
 .faq-button:hover .faq-question {
-    color: #0ea5e9;
+    color: #1f51a7;
 }
 
 .faq-icon {
     width: 1.5rem;
     height: 1.5rem;
-    color: #0ea5e9;
+    color: #1f51a7;
     transition: transform 0.3s;
 }
 

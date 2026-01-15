@@ -1,5 +1,6 @@
 ---
 import "../styles/components/Navbar.css";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   currentPath?: string;
@@ -12,22 +13,12 @@ const { currentPath = "home" } = Astro.props;
   <div class="navbar-container">
     <a href={import.meta.env.BASE_URL} class="logo-link">
       <div class="logo-icon">
-        <!-- <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          ></path>
-        </svg> -->
         <img
           src={import.meta.env.BASE_URL + "/images/logo-lightman.png"}
           alt=""
         />
       </div>
-      <!-- <span class="logo-text">
-        lightman <span>global</span>
-      </span> -->
+      <span class="logo-text"> Lightman Global </span>
     </a>
 
     <!-- Desktop Links -->
@@ -50,23 +41,22 @@ const { currentPath = "home" } = Astro.props;
         href={`${import.meta.env.BASE_URL}aduana/`}
         class={`nav-link ${currentPath === "aduana" ? "active" : ""}`}>Aduana</a
       >
+      <a
+        href={`${import.meta.env.BASE_URL}almacenadora/`}
+        class={`nav-link ${currentPath === "almacenadora" ? "active" : ""}`}
+        >Almacenadora</a
+      >
       <a href="#contact" class="btn-quote" id="desktop-quote-btn">Cotizar</a>
     </div>
 
     <!-- Mobile toggle -->
     <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
-      <svg
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        id="toggle-icon"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
+      <div id="menu-icon">
+        <Icon name="lucide:menu" />
+      </div>
+      <div id="close-icon" class="hidden">
+        <Icon name="lucide:x" />
+      </div>
     </button>
   </div>
 
@@ -83,6 +73,9 @@ const { currentPath = "home" } = Astro.props;
     <a href={`${import.meta.env.BASE_URL}aduana/`} class="mobile-nav-link"
       >Aduana</a
     >
+    <a href={`${import.meta.env.BASE_URL}almacenadora/`} class="mobile-nav-link"
+      >Almacenadora</a
+    >
     <a href="#contact" class="mobile-btn-quote" id="mobile-quote-btn"
       >Solicitar Cotización</a
     >
@@ -93,9 +86,10 @@ const { currentPath = "home" } = Astro.props;
   const navbar = document.getElementById("navbar");
   const mobileToggle = document.getElementById("mobile-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
-  const toggleIcon = document.getElementById("toggle-icon");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
 
-  if (navbar && mobileToggle && mobileMenu && toggleIcon) {
+  if (navbar && mobileToggle && mobileMenu && menuIcon && closeIcon) {
     // Scroll handling
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
@@ -112,12 +106,12 @@ const { currentPath = "home" } = Astro.props;
       isMenuOpen = !isMenuOpen;
       if (isMenuOpen) {
         mobileMenu.classList.add("open");
-        toggleIcon.innerHTML =
-          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
       } else {
         mobileMenu.classList.remove("open");
-        toggleIcon.innerHTML =
-          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
       }
     });
 
@@ -127,6 +121,8 @@ const { currentPath = "home" } = Astro.props;
       link.addEventListener("click", () => {
         isMenuOpen = false;
         mobileMenu.classList.remove("open");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
       });
     });
   }

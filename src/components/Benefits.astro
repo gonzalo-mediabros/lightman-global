@@ -1,5 +1,6 @@
 ---
 import "../styles/components/Benefits.css";
+import { Icon } from "astro-icon/components";
 
 const benefits = [
   {
@@ -49,14 +50,7 @@ const benefits = [
           benefits.map((benefit) => (
             <div class="benefit-item">
               <div class="benefit-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="3"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                <Icon name="lucide:check" />
               </div>
               <div class="benefit-text">
                 <h4>{benefit.title}</h4>

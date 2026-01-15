@@ -50,7 +50,7 @@
     position: absolute;
     bottom: -2rem;
     right: -2rem;
-    background-color: #172554; /* blue-950 */
+    background-color: #00003f; /* blue-950 */
     color: white;
     padding: 2rem;
     border-radius: 1rem;
@@ -75,7 +75,7 @@
 }
 
 .benefits-content h2 {
-    color: #172554;
+    color: #00003f;
     font-size: 1.875rem;
     font-weight: 700;
     margin-bottom: 2rem;
@@ -117,7 +117,7 @@
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 9999px;
-    background-color: #0ea5e9;
+    background-color: #1f51a7;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,7 +133,7 @@
 .benefit-text h4 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #172554;
+    color: #00003f;
     margin-bottom: 0.25rem;
 }
 
