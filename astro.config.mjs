@@ -7,22 +7,10 @@ import icon from 'astro-icon';
 * Descomentar para exportar para mediabros.cl/lightman
 */
 
-// export default defineConfig({
-//   base: '/lightman/',
-//   build: {
-//     assetsPrefix: '/lightman/'
-//   }
-//  integrations: [icon()]
-// });
+const isVercel = process.env.VERCEL === '1' || process.env.NODE_ENV === 'development';
+const BASE_PATH = isVercel ? '/' : '/lightman/';
 
-/*
-* OPCION 2 Para que funcione en Vercel
-* Descomentar para exportar para Vercel
-*/
 export default defineConfig({
-  base: './',
-  build: {
-    assetsPrefix: './'
-  },
+  base: BASE_PATH,
   integrations: [icon()]
 });
