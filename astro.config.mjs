@@ -18,4 +18,7 @@ export default defineConfig({
   site: DEPLOY_DOMAIN,
   base: DEPLOY_PATH,
   integrations: [icon()],
+  build: {
+    assets: "assets",
+  },
 });
