@@ -8,7 +8,7 @@ import icon from "astro-icon";
 
 const isVercel =
   process.env.VERCEL === "1" || process.env.NODE_ENV === "development";
-const BASE_PATH = isVercel ? "/" : "/lightman/";
+const BASE_PATH = isVercel ? "/" : "/lightman-global/";
 
 export default defineConfig({
   // site: "https://mediabros.cl",

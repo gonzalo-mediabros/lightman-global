@@ -40,6 +40,9 @@ Para apuntar tu dominio personalizado a GitHub Pages, agrega los siguientes regi
 > [!IMPORTANT]
 > Reemplaza `gonzalo-mediabros.github.io` con la URL correspondiente a tu cuenta de GitHub si es diferente.
 
+> [!IMPORTANT]
+> si la pagina de github tiene una url temporal como `https://gonzalo-mediabros.github.io/lightman-global/` se debe configurar el base path en el archivo `astro.config.mjs`.
+
 ---
 
 ## 3. Configuración en GitHub
