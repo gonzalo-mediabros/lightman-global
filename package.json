@@ -1,5 +1,5 @@
 {
-  "name": "Lightman Global-logistics-web",
+  "name": "lightman-global",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
@@ -18,7 +19,8 @@
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
-    "typescript": "~5.8.2"
+    "typescript": "~5.8.2",
+    "gh-pages": "^6.0.0"
   },
   "overrides": {
     "undici": "^6.21.1"
