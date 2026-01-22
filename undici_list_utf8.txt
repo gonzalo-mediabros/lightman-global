@@ -1,6 +1,0 @@
-Lightman Global-logistics-web@1.0.0 S:\Proyectos\01_Clientes\Mediabros\lightman-global v3
-└─┬ astro-icon@1.1.5
-  └─┬ @iconify/tools@4.2.0
-    └─┬ cheerio@1.1.2
-      └── undici@7.18.2
-
