@@ -1,17 +1,21 @@
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
 
-/*
- * OPCION 1 Para que funcione en una carpeta dentro del dominio agregar el la carpeta
- * Descomentar para exportar para mediabros.cl/lightman
- */
 
-const isVercel =
-  process.env.VERCEL === "1" || process.env.NODE_ENV === "development";
-const BASE_PATH = isVercel ? "/" : "/lightman-global/";
+/*
+* DEPLOY GITHUB PAGES DOMINIO TEMPORAL
+*/
+let DEPLOY_DOMAIN = "https://gonzalo-mediabros.github.io"; 
+let DEPLOY_PATH = "/lightman-global/";   
+
+/* ⚠️ DESCOMENTAR Y COMPLETAR SI DEPLOY ES UN CUSTOM DOMAIN ⚠️ */
+
+// DEPLOY_DOMAIN = "https://lightmanglobal.com";
+// DEPLOY_PATH = "/";
+
 
 export default defineConfig({
-  // site: "https://mediabros.cl",
-  base: BASE_PATH,
+  site: DEPLOY_DOMAIN,
+  base: DEPLOY_PATH,
   integrations: [icon()],
 });
