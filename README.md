@@ -1,20 +1,71 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Instrucciones de Build y Deploy
 
-# Run and deploy your AI Studio app
+Este documento detalla los pasos necesarios para compilar el proyecto, desplegarlo en GitHub Pages y configurar la delegación de dominio.
 
-This contains everything you need to run your app locally.
+## 0. Instalación de dependencias
 
-View your app in AI Studio: https://ai.studio/apps/drive/1PufYl-wrao7z3M38K1ae7YPdWkGOU6o5
+```bash
+npm run install
+```
 
-## Run Locally
+## 1. Compilación y Despliegue
 
-**Prerequisites:**  Node.js
+### Build del proyecto
 
+Para generar los archivos estáticos en la carpeta `dist/`:
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm run build
+```
+
+### Deploy en GitHub Pages
+
+Para subir el contenido de `dist/` a la rama `gh-pages`:
+
+```bash
+npm run deploy
+```
+
+> [!NOTE]
+> Este comando usa `gh-pages` para crear/actualizar automáticamente la rama de despliegue.
+
+---
+
+## 2. Delegación de Dominio (DNS)
+
+Para apuntar tu dominio personalizado a GitHub Pages, agrega los siguientes registros en el panel de control de tu proveedor de dominio (Godaddy, Donweb, etc.):
+
+| Tipo      | Hosting | Valor                         |
+| :-------- | :------ | :---------------------------- |
+| **A**     | @       | `185.199.108.153`             |
+| **A**     | @       | `185.199.109.153`             |
+| **A**     | @       | `185.199.110.153`             |
+| **A**     | @       | `185.199.111.153`             |
+| **CNAME** | www     | `gonzalo-mediabros.github.io` |
+
+> [!IMPORTANT]
+> Reemplaza `gonzalo-mediabros.github.io` con la URL correspondiente a tu cuenta de GitHub si es diferente.
+
+> [!IMPORTANT]
+> si la pagina de github tiene una url temporal como `https://gonzalo-mediabros.github.io/lightman-global/` se debe configurar el base path en el archivo `astro.config.mjs`.
+
+> [!IMPORTANT]
+> Si la web tiene un dominio personalizado, se debe configurar el base path en el archivo `astro.config.mjs`. descomentando y editando las variables.
+> se debe agregar CNAME en la carpeta public con el dominio personalizado.
+
+---
+
+## 3. Configuración en GitHub
+
+1. Ingresa a tu repositorio en GitHub.
+2. Ve a **Settings** → **Pages**.
+3. En la sección **Custom domain**, escribe tu dominio (ej: `tudominio.com`).
+4. Haz clic en **Save**.
+5. Se recomienda activar **Enforce HTTPS** una vez que los certificados se hayan generado (puede demorar unos minutos).
+
+---
+
+## 4. Recordatorio Final
+
+> [!CAUTION]
+> No olvides **configurar y validar el formulario de contacto** antes de dar por finalizado el despliegue. Asegúrate de que las variables de entorno `PUBLIC_SCRIPT_URL` y `PUBLIC_SCRIPT_API_KEY` estén correctamente configuradas.
