@@ -23,6 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
+# Agent
+.agent
+.agent*
+
 # Enviroment variables
 .env
 .env*
+

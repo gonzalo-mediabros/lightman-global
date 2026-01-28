@@ -65,7 +65,10 @@ Para apuntar tu dominio personalizado a GitHub Pages, agrega los siguientes regi
 
 ---
 
-## 4. Recordatorio Final
+## 4. FORMULARIO
+
+El archio google-script.js contiene el código de envio del formulario. Este código debe copiarse en en la hoja de cálculo correspondiente.
+y debe editarse en BLOQUE DE CONFIGURACIÓN de dicho archivo. para configurar los datos del formulario.
 
 > [!CAUTION]
 > No olvides **configurar y validar el formulario de contacto** antes de dar por finalizado el despliegue. Asegúrate de que las variables de entorno `PUBLIC_SCRIPT_URL` y `PUBLIC_SCRIPT_API_KEY` estén correctamente configuradas.
