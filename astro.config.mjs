@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
-import icon from "astro-icon";
-
+import astroIcon from 'astro-icon'
 
 /*
 * DEPLOY GITHUB PAGES DOMINIO TEMPORAL
@@ -17,7 +16,7 @@ let DEPLOY_PATH = "/lightman-global/";
 export default defineConfig({
   site: DEPLOY_DOMAIN,
   base: DEPLOY_PATH,
-  integrations: [icon()],
+  integrations: [astroIcon()],
   build: {
     assets: "assets",
   },
