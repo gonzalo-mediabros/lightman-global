@@ -1,0 +1,196 @@
+---
+// src/pages/test.astro
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Test Basin API (Doble Endpoint)</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: auto;
+        background: #f0f0f0;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .container {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .form-box {
+        flex: 1;
+        min-width: 300px;
+        padding: 2rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 0.75rem 1.5rem;
+        background: #000;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: bold;
+      }
+      button:hover {
+        background: #333;
+      }
+      button:disabled {
+        background: #999;
+        cursor: not-allowed;
+      }
+      .alerta {
+        display: none;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 4px;
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .endpoint-code {
+        font-size: 0.8rem;
+        background: #eee;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        color: #c7254e;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Validación UseBasin Multi-Cliente</h1>
+
+    <div class="container">
+      <!-- FORMULARIO 1 -->
+      <div class="form-box">
+        <h2>Cliente A</h2>
+        <p>ID: <span class="endpoint-code">ddb2fc19c25e</span></p>
+
+        <form
+          class="basin-form"
+          action="https://usebasin.com/f/ddb2fc19c25e"
+          method="POST"
+        >
+          <div class="form-group">
+            <label>Nombre Completo</label>
+            <input type="text" name="nombre" required />
+          </div>
+          <div class="form-group">
+            <label>Email de Contacto</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Mensaje para Cliente A</label>
+            <textarea name="mensaje" rows="4" required></textarea>
+          </div>
+          <button type="submit">Enviar a Cliente A</button>
+          <div class="alerta">¡Éxito! Recibido en Endpoint A.</div>
+        </form>
+      </div>
+
+      <!-- FORMULARIO 2 -->
+      <div class="form-box">
+        <h2>Cliente B</h2>
+        <p>ID: <span class="endpoint-code">ab655a8d7821</span></p>
+
+        <form
+          class="basin-form"
+          action="https://usebasin.com/f/ab655a8d7821"
+          method="POST"
+        >
+          <div class="form-group">
+            <label>Nombre Completo</label>
+            <input type="text" name="nombre" required />
+          </div>
+          <div class="form-group">
+            <label>Email de Contacto</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Mensaje para Cliente B</label>
+            <textarea name="mensaje" rows="4" required></textarea>
+          </div>
+          <button type="submit">Enviar a Cliente B</button>
+          <div class="alerta">¡Éxito! Recibido en Endpoint B.</div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // JS Modular para cualquier cantidad de formularios
+      document.querySelectorAll(".basin-form").forEach((form) => {
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const btnSubmit = form.querySelector('button[type="submit"]');
+          const alerta = form.querySelector(".alerta");
+
+          // Estado de carga
+          const originalText = btnSubmit.textContent;
+          btnSubmit.textContent = "Conectando...";
+          btnSubmit.disabled = true;
+          alerta.style.display = "none";
+
+          const formData = new FormData(form);
+
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              headers: {
+                Accept: "application/json", // Crucial para saltar redirección
+              },
+              body: formData,
+            });
+
+            if (response.ok) {
+              form.reset();
+              alerta.style.display = "block";
+              btnSubmit.textContent = originalText;
+            } else {
+              alert(
+                "❌ Error: Endpoint rechazó la solicitud (¿Superaste cuota o está mal la URL?).",
+              );
+              btnSubmit.textContent = originalText;
+            }
+          } catch (error) {
+            console.error(error);
+            alert("❌ Hubo un fallo de red o Basin está caído.");
+            btnSubmit.textContent = originalText;
+          } finally {
+            btnSubmit.disabled = false;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

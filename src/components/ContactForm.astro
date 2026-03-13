@@ -14,9 +14,8 @@ const serviceTypes = [
   "Otro",
 ];
 
-// Configuración de Seguridad y Endpoint
+// Configuración de Endpoint
 const SCRIPT_URL = import.meta.env.PUBLIC_SCRIPT_URL;
-const API_KEY = import.meta.env.PUBLIC_SCRIPT_API_KEY;
 ---
 
 <section id="contact" class="contact-form-section">
@@ -55,8 +54,8 @@ const API_KEY = import.meta.env.PUBLIC_SCRIPT_API_KEY;
             <div class="detail-text">
               <p>Email</p>
               <p>
-                <a href="mailto:contacto@lmgmx.com" target="_blank"
-                  >contacto@lmgmx.com</a
+                <a href="mailto:atencionaclientes@lmgmx.com" target="_blank"
+                  >atencionaclientes@lmgmx.com</a
                 >
               </p>
             </div>
@@ -67,7 +66,7 @@ const API_KEY = import.meta.env.PUBLIC_SCRIPT_API_KEY;
               <Icon name="lucide:phone" />
             </div>
             <div class="detail-text">
-              <p>Teléfono / WhatsApp</p>
+              <p>Teléfono</p>
               <p>
                 <a href="tel:+525563632941" target="_blank">(52) 55 6363 2941</a
                 >
@@ -116,7 +115,10 @@ const API_KEY = import.meta.env.PUBLIC_SCRIPT_API_KEY;
           </div>
         </div>
 
-        <form id="contact-form" data-url={SCRIPT_URL} data-apikey={API_KEY}>
+        <form
+          id="contact-form"
+          data-url={SCRIPT_URL}
+        >
           <div class="form-grid">
             <div class="form-group">
               <label>Nombre y Apellido *</label>
@@ -151,7 +153,7 @@ const API_KEY = import.meta.env.PUBLIC_SCRIPT_API_KEY;
               />
             </div>
             <div class="form-group">
-              <label>Teléfono / WhatsApp</label>
+              <label>Teléfono </label>
               <input
                 type="tel"
                 name="phone"
@@ -182,7 +184,7 @@ const API_KEY = import.meta.env.PUBLIC_SCRIPT_API_KEY;
           <div class="hidden">
             <input
               type="text"
-              name="website"
+              name="_gotcha"
               tabindex="-1"
               autocomplete="off"
             />
@@ -244,6 +246,7 @@ const API_KEY = import.meta.env.PUBLIC_SCRIPT_API_KEY;
   ) {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      console.group("🚀 Usebasin Submission Process");
 
       // Reset states
       submitBtn.disabled = true;
@@ -252,61 +255,40 @@ const API_KEY = import.meta.env.PUBLIC_SCRIPT_API_KEY;
       errorMessage.style.display = "none";
 
       const formData = new FormData(form);
-      const data: any = Object.fromEntries(formData.entries());
-
-      // Validation
-      if (!data.name || !data.email || !data.message) {
-        errorMessage.innerText =
-          "Por favor complete todos los campos obligatorios.";
-        errorMessage.style.display = "block";
-        submitBtn.disabled = false;
-        spinner.style.display = "none";
-        btnText.innerText = "Solicitar Cotización Ahora";
-        return;
-      }
-
-      // Payload con Seguridad
-      const payload: any = {
-        ...data,
-        api_key: form.dataset.apikey,
-        origin: window.location.hostname,
-        pageUrl: window.location.href,
-        userAgent: navigator.userAgent,
-        source: "landing-logistica",
-      };
 
       try {
-        // Usamos URLSearchParams para asegurar que los caracteres UTF-8 (emojis, tildes)
-        // se codifiquen correctamente antes de llegar a Google Apps Script.
-        const body = new URLSearchParams(payload);
-
-        await fetch(form.dataset.url || "", {
+        console.log("📨 Enviando datos a Usebasin...");
+        
+        const response = await fetch(form.dataset.url || "", {
           method: "POST",
-          mode: "no-cors",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+            "Accept": "application/json",
           },
-          body: body,
+          body: formData,
         });
 
-        // En modo no-cors no podemos leer la respuesta, pero si fetch no da error,
-        // asumimos que llegó al servidor de Google (standard para GAS).
-        successMessage.style.display = "flex";
-        form.reset();
+        if (response.ok) {
+          console.log("✅ Envío exitoso");
+          successMessage.style.display = "flex";
+          form.reset();
 
-        // Auto reset after 10s
-        setTimeout(() => {
-          successMessage.style.display = "none";
-        }, 10000);
+          // Auto reset after 10s
+          setTimeout(() => {
+            successMessage.style.display = "none";
+          }, 10000);
+        } else {
+          const result = await response.json();
+          throw new Error(result.error || "Fallo en el servidor de Usebasin");
+        }
       } catch (err) {
-        console.error("Error submitting form:", err);
-        errorMessage.innerText =
-          "Hubo un error al enviar el formulario. Por favor, intente nuevamente.";
+        console.error("❌ Error al enviar:", err);
+        errorMessage.innerText = "Hubo un error al enviar el formulario. Por favor, intente nuevamente.";
         errorMessage.style.display = "block";
       } finally {
         submitBtn.disabled = false;
         spinner.style.display = "none";
         btnText.innerText = "Solicitar Cotización Ahora";
+        console.groupEnd();
       }
     });
 

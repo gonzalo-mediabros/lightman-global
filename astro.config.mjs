@@ -9,8 +9,8 @@ let DEPLOY_PATH = "/lightman-global/";
 
 /* ⚠️ DESCOMENTAR Y COMPLETAR SI DEPLOY ES UN CUSTOM DOMAIN ⚠️ */
 
-// DEPLOY_DOMAIN = "https://lightmanglobal.com";
-// DEPLOY_PATH = "/";
+DEPLOY_DOMAIN = "https://lightmanglobal.com";
+DEPLOY_PATH = "/";
 
 
 export default defineConfig({
